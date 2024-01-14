@@ -7,7 +7,14 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+Cypress.Commands.add("login", (login, password) => {
+    cy.get("#user_email").type(login);
+    cy.get("#user_password").type(password);
+    cy.get('[type="submit"]').click();
+    cy.get("#open-navigation-menu-mobile").click();
+    cy.contains('Log out').click();
+  });
+  
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
