@@ -14,7 +14,19 @@ Cypress.Commands.add("fillUserLoginData", (login, password) => {
     cy.get("#open-navigation-menu-mobile").click();
     cy.contains('Log out').click();
   });
-  
+Cypress.Commands.add("fillUserLogin", (login)=>{
+    cy.get("#user_email").type(login);
+})
+Cypress.Commands.add("fillUserPassword", (password)=>{
+    cy.get("#user_password").type(password);
+})
+Cypress.Commands.add("clickLogin", (clickLogin)=>{
+    cy.get('[type="submit"]').click();
+})
+Cypress.Commands.add("logout", (logout)=>{
+    cy.get("#open-navigation-menu-mobile").click();
+    cy.contains('Log out').click();
+})
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
