@@ -7,7 +7,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-Cypress.Commands.add("login", (login, password) => {
+Cypress.Commands.add("fillUserLoginData", (login, password) => {
     cy.get("#user_email").type(login);
     cy.get("#user_password").type(password);
     cy.get('[type="submit"]').click();
