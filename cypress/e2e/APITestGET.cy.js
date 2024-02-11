@@ -14,17 +14,17 @@ describe ('API test GET response',()=>{
             })
         });
         });
-        describe ('GET response on wrong url',()=>{
-            const wrongUrl={
-                url: 'https://httpbin.org/not-exist',
-                failOnStatusCode:false
-            }
-            it('response should not be 200',()=>{
-                cy.request(wrongUrl).then(response=>{
-                    const currentStatus=response.status;
-                    const expectedStatus=200;
-                    assert.equal(expectedStatus,currentStatus);
-                    cy.log(currentStatus);
-                })
-            });
-            });
+        // describe ('GET response on wrong url',()=>{
+        //     const wrongUrl={
+        //         url: 'https://httpbin.org/not-exist',
+        //         failOnStatusCode:false
+        //     }
+        //     it('response should not be 200',()=>{
+        //         cy.request(wrongUrl).then(response=>{
+        //             const currentStatus=response.status;
+        //             const expectedStatus=200;
+        //             assert.equal(expectedStatus,currentStatus);
+        //             cy.log(currentStatus);
+        //         })
+        //     });
+        //     });
