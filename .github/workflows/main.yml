@@ -1,1 +1,20 @@
-nowy plik do konfiguracji workflow
+name: Cypress Tests
+
+on:
+    push:
+        branches:
+            - main
+jobs:
+    cypress-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: check repository cypress1
+              uses: actions/checkout@v4
+
+            - name: install dependencies
+              run: npm install
+
+            - name: run cypress test
+              run: npm run cypress:run
+
